@@ -4,6 +4,10 @@ const imgP = document.getElementById('img');
 
 const exp = document.getElementById('exp')
 
+const iptc = document.getElementById('iptc')
+
+const iptcb = document.getElementById('iptcb')
+
 const img = new Image();
 
 const inpt = document.getElementById('inpm')
@@ -47,7 +51,7 @@ img.onload = function() {
   ctx.clearRect(0, 0, width, height)
 
   ctx.drawImage(img, 0, 0);
-  
+
   textTop()
   textBottom()
 
@@ -57,21 +61,26 @@ img.onload = function() {
 
 function textTop() {
   ctx.textAlign = 'center'
-  ctx.font = "50px Arial";
-  ctx.fillStyle = 'black'
-  ctx.fillText(inpt.value , canvas.width / 2, 50);
+  ctx.font = "60px Arial";
+  ctx.fillStyle = iptc.value
+  ctx.fillText(inpt.value, canvas.width / 2, 70);
 }
 
-function textBottom(){
+function textBottom() {
   ctx.textAlign = 'center'
-  ctx.font = "50px Arial";
-  ctx.fillStyle = 'black'
-  ctx.fillText(inptb.value , canvas.width / 2, canvas.height - 20);
+  ctx.font = "60px Arial";
+  ctx.fillStyle = iptcb.value
+  ctx.fillText(inptb.value, canvas.width / 2, canvas.height - 20);
 }
 
-exp.onclick = function(){
-  const a = document.createElement('a')
-  a.download = photoName
-  a.href = canvas.toDataURL()
-  a.click()
+exp.onclick = function() {
+  if(photoName == null) {
+    alert ('nao foi possível fazer o download')
+  }
+  else {
+    const a = document.createElement('a')
+    a.download = photoName
+    a.href = canvas.toDataURL()
+    a.click()
+  }
 }

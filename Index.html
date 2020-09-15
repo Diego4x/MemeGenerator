@@ -12,21 +12,23 @@
 </head>
 
 <body>
-  <div class="div2">
+  <div class="container">
     <span>Escreva um texto e depois selecione uma imagem</span>
     <input type="file" id="inpf" style="margin-top: 15px" />
     <div class="div">
-      <span id="span">Imagem Preview</span>
+      <span id="span">Image preview</span>
       <img class="img" id="img" />
     </div>
     <div class="divm">
-      <input type="text" id="inpm" placeholder="texto em cima" />
+      <input type="text" id="inpm" placeholder="Texto em cima" />
+      <input type="color" id="iptc" />
     </div>
     <div>
-      <input type="text" id="inptb" placeholder="texto em baixo" />
+      <input type="text" id="inptb" placeholder="Texto em baixo" />
+      <input type="color" id="iptcb" />
     </div>
     <div class="export">
-      <button type="submit" id="exp">Download do meme</button>
+      <button class="buttom" type="submit" id="exp">Download do meme</button>
     </div>
   </div>
   <script src="main.js"></script>
